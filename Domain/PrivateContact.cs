@@ -1,6 +1,6 @@
 using System;
 
-public class PrivateContact : PrivateContact
+public class PrivateContact : Contact
 {
     public string RelationType{get; set;}
     public DateTime Birthday {get; set;}
