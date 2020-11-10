@@ -11,6 +11,33 @@ namespace Addressbok
 
             //Lägg in några kontakter från början
             GenerateFakecontacts(addressBook);
+
+            //Lista kontakter:
+            foreach (Contact minKontakt in addressBook.GetContacts())
+            {
+                PrintContact(minKontakt);
+            }
+        }
+
+        static void PrintContact(Contact minKontakt)
+        {
+            Console.WriteLine("FirstName: " + minKontakt.FirstName);
+            Console.WriteLine("LastName: " + minKontakt.LastName);
+
+            BusinessContact bs = minKontakt as BusinessContact;
+
+            Type typen = minKontakt.GetType();
+
+            // typeof(Contact);
+            if(minKontakt is PrivateContact privateContact)
+            {
+                Console.WriteLine("Birthday: " + privateContact.Birthday.ToString("yyyy/MM/dd"));
+            }
+            else if (minKontakt is BusinessContact bc)
+            {
+                Console.WriteLine("Company: " + bc.Company);
+            }
+            Console.WriteLine();
         }
 
         static void GenerateFakecontacts(AddressBook addressBook)
