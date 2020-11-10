@@ -12,6 +12,17 @@ namespace Addressbok
             //Lägg in några kontakter från början
             GenerateFakecontacts(addressBook);
 
+            //Lägg in egna kontakter:
+            Console.Write("First name: ");
+            string firstName = Console.ReadLine();
+            Console.Write("Last name: ");
+            string lastName = Console.ReadLine();
+            Console.Write("Birthday: ");
+            PrivateContact newContact = new PrivateContact();
+            newContact.FirstName = firstName;
+            newContact.LastName = lastName;
+            addressBook.Add(newContact);
+
             //Lista kontakter:
             foreach (Contact minKontakt in addressBook.GetContacts())
             {
