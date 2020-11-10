@@ -6,7 +6,8 @@ namespace Addressbok
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Skapa adressbok
+            AddressBook addressBook = new AddressBook();
         }
     }
 }
